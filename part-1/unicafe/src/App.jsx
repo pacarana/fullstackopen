@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Statistics from './components/Statistics'
+import Button from './components/Button'
 
 const App = () => {
   const [good, setGood] = useState(0)
@@ -12,9 +13,9 @@ const App = () => {
       <section>
         <h1>give feedback</h1>
 
-        <button onClick={() => {setGood(good + 1); console.log("good:\n" + good)}}>good</button>
-        <button onClick={() => {setNeutral(neutral + 1); console.log("neutral:\n" + neutral)}}>neutral</button>
-        <button onClick={() => {setBad(bad + 1); console.log("bad:\n" + bad)}}>bad</button>
+        <Button onClick={() => {setGood(good + 1)}} btnText={"good"} />
+        <Button onClick={() => {setNeutral(neutral + 1)}} btnText={"neutral"} />
+        <Button onClick={() => {setBad(bad + 1)}} btnText={"bad"} />
       </section>
 
       <Statistics good={good} neutral={neutral} bad={bad}/>
@@ -22,4 +23,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

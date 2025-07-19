@@ -1,3 +1,5 @@
+import StatisticLine from "./StatisticLine";
+
 const Statistics = ({good, neutral, bad}) => {
 
   const handleAverage = () => {
@@ -23,12 +25,12 @@ const Statistics = ({good, neutral, bad}) => {
         <section>
             <h1>statistics</h1>
 
-            <p>good {good}</p>
-            <p>neutral {neutral}</p>
-            <p>bad {bad}</p>
-            <p>all {good + neutral + bad}</p>
-            <p>average {handleAverage().toFixed(14)}</p>
-            <p>positive {handlePositiveAverage().toFixed(13) + "%"}</p>
+            <StatisticLine statName={"good"} statValue={good} />
+            <StatisticLine statName={"neutral"} statValue={neutral} />
+            <StatisticLine statName={"bad"} statValue={bad} />
+            <StatisticLine statName={"all"} statValue={good + neutral + bad} />
+            <StatisticLine statName={"average"} statValue={handleAverage().toFixed(14)} />
+            <StatisticLine statName={"positive"} statValue={handlePositiveAverage().toFixed(13) + "%"} />
         </section>
         </>
     ) : (
