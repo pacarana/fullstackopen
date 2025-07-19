@@ -18,7 +18,7 @@ const Statistics = ({good, neutral, bad}) => {
     return pAvg * 100;
   }
 
-    return (
+    return good || neutral || bad ? (
         <>
         <section>
             <h1>statistics</h1>
@@ -31,7 +31,11 @@ const Statistics = ({good, neutral, bad}) => {
             <p>positive {handlePositiveAverage().toFixed(13) + "%"}</p>
         </section>
         </>
-    );
+    ) : (
+        <div>
+            <p>No feedback given</p>
+        </div>
+    )
 };
 
 export default Statistics;
