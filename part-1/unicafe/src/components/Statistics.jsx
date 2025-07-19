@@ -25,12 +25,32 @@ const Statistics = ({good, neutral, bad}) => {
         <section>
             <h1>statistics</h1>
 
-            <StatisticLine statName={"good"} statValue={good} />
-            <StatisticLine statName={"neutral"} statValue={neutral} />
-            <StatisticLine statName={"bad"} statValue={bad} />
-            <StatisticLine statName={"all"} statValue={good + neutral + bad} />
-            <StatisticLine statName={"average"} statValue={handleAverage().toFixed(14)} />
-            <StatisticLine statName={"positive"} statValue={handlePositiveAverage().toFixed(13) + "%"} />
+            <table>
+                <tr>
+                    <td><StatisticLine statName={"good"}/></td>
+                    <td><StatisticLine statValue={good}/></td>
+                </tr>
+                <tr>
+                    <td><StatisticLine statName={"neutral"}/></td>
+                    <td><StatisticLine statValue={neutral}/></td>
+                </tr>
+                <tr>
+                    <td><StatisticLine statName={"bad"}/></td>
+                    <td><StatisticLine statValue={bad}/></td>
+                </tr>
+                <tr>
+                    <td><StatisticLine statName={"all"}/></td>
+                    <td><StatisticLine statValue={good + neutral + bad}/></td>
+                </tr>
+                <tr>
+                    <td><StatisticLine statName={"average"}/></td>
+                    <td><StatisticLine statValue={handleAverage().toFixed(1)}/></td>
+                </tr>
+                <tr>
+                    <td><StatisticLine statName={"positive"}/></td>
+                    <td><StatisticLine statValue={handlePositiveAverage().toFixed(1) + "%"}/></td>
+                </tr>
+            </table>
         </section>
         </>
     ) : (
