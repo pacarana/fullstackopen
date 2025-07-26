@@ -8,7 +8,7 @@ const Content = ({parts}) => {
                 Can change '{}' for '()' in map function to implicitly return instead of using return command 
             */}
             {parts.map((part, key) => {
-               return <Part key={key} name={part.name} exercises={part.exercises} />
+               return <Part key={part.id} name={part.name} exercises={part.exercises} />
             })}
         </>
     );
