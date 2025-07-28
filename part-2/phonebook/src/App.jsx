@@ -8,6 +8,7 @@ const App = () => {
 
   return (
     <div>
+      <div>debug: {newName}</div>
       <h2>Phonebook</h2>
       <form>
         <div>
