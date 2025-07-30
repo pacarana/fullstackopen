@@ -9,6 +9,13 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newName.trim() === '') return;
+
+    persons.forEach((person) => {
+      if (person.name === newName) {
+        alert(`${newName} is already added to phonebook`)
+      }
+    })
+
     setPersons([...persons, {name: newName}]);
     setNewName('');
   }
